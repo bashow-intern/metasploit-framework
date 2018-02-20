@@ -26,6 +26,10 @@ module Payload::Windows::BindTcp_x64
   # Generate the first stage
   #
   def generate
+
+    # debug
+    binding.pry
+
     conf = {
       port:     datastore['LPORT'],
       reliable: false
@@ -60,6 +64,10 @@ module Payload::Windows::BindTcp_x64
   # Generate and compile the stager
   #
   def generate_bind_tcp(opts={})
+
+    # debug
+    binding.pry
+    
     combined_asm = %Q^
       cld                    ; Clear the direction flag.
       and rsp, 0xFFFFFFFFFFFFFFF0 ; Ensure RSP is 16 byte aligned
@@ -105,6 +113,10 @@ module Payload::Windows::BindTcp_x64
   # @option opts [Bool] :reliable Whether or not to enable error handling code
   #
   def asm_bind_tcp(opts={})
+
+    # debug
+    binding.pry
+    
     reliable      = opts[:reliable]
     addr_fam      = 2
     sockaddr_size = 16

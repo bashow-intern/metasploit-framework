@@ -20,7 +20,7 @@ module MetasploitModule
   include Msf::Payload::Windows::Exec_x64
   include Rex::Powershell::Command
   include Msf::Payload::Windows::Powershell
-
+  
   def initialize(info = {})
     super(update_info(info,
       'Name'          => 'Windows Interactive Powershell Session, Bind TCP',

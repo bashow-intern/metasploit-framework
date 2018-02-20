@@ -28,6 +28,10 @@ module Payload::Windows::BindTcp
   # Generate the first stage
   #
   def generate
+
+    # debug
+    binding.pry
+
     conf = {
       port:     datastore['LPORT'],
       reliable: false
@@ -65,6 +69,10 @@ module Payload::Windows::BindTcp
   # Generate and compile the stager
   #
   def generate_bind_tcp(opts={})
+
+    # debug
+    binding.pry
+    
     combined_asm = %Q^
       cld                    ; Clear the direction flag.
       call start             ; Call start, this pushes the address of 'api_call' onto the stack.
@@ -107,6 +115,9 @@ module Payload::Windows::BindTcp
   #
   def asm_bind_tcp(opts={})
 
+    # debug
+    binding.pry
+    
     reliable      = opts[:reliable]
     addr_fam      = 2
     sockaddr_size = 16

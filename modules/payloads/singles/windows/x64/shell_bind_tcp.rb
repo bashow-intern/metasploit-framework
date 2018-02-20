@@ -14,7 +14,7 @@ module MetasploitModule
   include Msf::Payload::Windows
   include Msf::Payload::Single
   include Msf::Sessions::CommandShellOptions
-
+  
   def initialize(info = {})
     super(merge_info(info,
       'Name'          => 'Windows x64 Command Shell, Bind TCP Inline',
