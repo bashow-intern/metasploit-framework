@@ -66,5 +66,3 @@ module MetasploitModule
     config.to_b
   end
 end
-
-
