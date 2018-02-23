@@ -30,7 +30,7 @@ module Payload::Windows::BindTcp
   def generate
 
     # debug
-    binding.pry
+    # binding.pry
 
     conf = {
       port:     datastore['LPORT'],
@@ -71,8 +71,8 @@ module Payload::Windows::BindTcp
   def generate_bind_tcp(opts={})
 
     # debug
-    binding.pry
-    
+    # binding.pry
+
     combined_asm = %Q^
       cld                    ; Clear the direction flag.
       call start             ; Call start, this pushes the address of 'api_call' onto the stack.
@@ -116,8 +116,8 @@ module Payload::Windows::BindTcp
   def asm_bind_tcp(opts={})
 
     # debug
-    binding.pry
-    
+    # binding.pry
+
     reliable      = opts[:reliable]
     addr_fam      = 2
     sockaddr_size = 16

@@ -28,7 +28,7 @@ module Payload::Windows::BindTcp_x64
   def generate
 
     # debug
-    binding.pry
+    # binding.pry
 
     conf = {
       port:     datastore['LPORT'],
@@ -66,8 +66,8 @@ module Payload::Windows::BindTcp_x64
   def generate_bind_tcp(opts={})
 
     # debug
-    binding.pry
-    
+    # binding.pry
+
     combined_asm = %Q^
       cld                    ; Clear the direction flag.
       and rsp, 0xFFFFFFFFFFFFFFF0 ; Ensure RSP is 16 byte aligned
@@ -115,8 +115,8 @@ module Payload::Windows::BindTcp_x64
   def asm_bind_tcp(opts={})
 
     # debug
-    binding.pry
-    
+    # binding.pry
+
     reliable      = opts[:reliable]
     addr_fam      = 2
     sockaddr_size = 16

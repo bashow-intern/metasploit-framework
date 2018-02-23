@@ -35,7 +35,7 @@ module Payload::Windows::ReverseTcp_x64
   def generate
 
     # debug
-    binding.pry
+    # binding.pry
 
     conf = {
       port:        datastore['LPORT'],
@@ -67,8 +67,8 @@ module Payload::Windows::ReverseTcp_x64
   def generate_reverse_tcp(opts={})
 
     # debug
-    binding.pry
-    
+    # binding.pry
+
     combined_asm = %Q^
       cld                     ; Clear the direction flag.
       and rsp, ~0xF           ;  Ensure RSP is 16 byte aligned 
@@ -114,8 +114,8 @@ module Payload::Windows::ReverseTcp_x64
   def asm_reverse_tcp(opts={})
 
     # debug
-    binding.pry
-    
+    # binding.pry
+
     reliable     = opts[:reliable]
     retry_count  = [opts[:retry_count].to_i, 1].max
     encoded_port = [opts[:port].to_i,2].pack("vn").unpack("N").first
