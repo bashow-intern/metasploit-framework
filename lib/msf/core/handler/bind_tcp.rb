@@ -104,6 +104,9 @@ module BindTcp
 
       print_status("Started bind handler")
 
+      # debug
+      binding.pry
+
       if (rhost == nil)
         raise ArgumentError,
           "RHOST is not defined; bind stager cannot function.",

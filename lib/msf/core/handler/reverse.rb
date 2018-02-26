@@ -106,6 +106,10 @@ module Msf
             ex = false
             via = via_string_for_ip(ip, comm)
             print_status("Started #{human_name} handler on #{ip}:#{local_port} #{via}")
+
+            #  debug
+            binding.pry
+
             break
           end
         end
