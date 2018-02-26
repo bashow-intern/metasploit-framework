@@ -85,6 +85,10 @@ module Payload::Windows::ReverseTcp
       #{asm_reverse_tcp(opts)}
       #{asm_block_recv(opts)}
     ^
+
+    #  debug
+    binding.pry
+
     Metasm::Shellcode.assemble(Metasm::X86.new, combined_asm).encode_string
   end
 
@@ -230,6 +234,9 @@ module Payload::Windows::ReverseTcp
     ^
 
     asm << asm_send_uuid if include_send_uuid
+
+    #  debug
+    binding.pry
 
     asm
   end

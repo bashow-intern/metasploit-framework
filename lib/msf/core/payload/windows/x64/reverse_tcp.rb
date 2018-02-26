@@ -296,6 +296,9 @@ module Payload::Windows::ReverseTcp_x64
       asm << asm_exitfunk(opts)
     end
 
+    # debug
+    binding.pry
+
     asm
   end
 
